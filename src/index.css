@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One:regular);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Outfit:100,200,300,regular,500,600,700,800,900);
+@import "tailwindcss";
+
+*{
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #ffddc5be;
+  color: #1C1C1C;
+}
+
+.one{
+  font-family:'Poiret One';
+  letter-spacing: 3px;
+}
+
+.Poiret{
+  font-family: 'Poiret One';
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: black;
+}
+
+.two{
+  font-family: 'Poppins';
+}
+
+.three{
+  font-family: 'Outfit';
+}
+
+.bg-primary{
+  background-color: #fdf2e9;
+}
+
+.bg-secondary{
+  background-color: rgb(24, 14, 0);
+}
+
+.bg-glass{
+  background-color: #1c1c1c88;
+  backdrop-filter: blur(20px);
+  color: white;
+}
+
+.p-glass{
+  background-color: #ffffffe3;
+  backdrop-filter: blur(20px);
+}
+
+::placeholder{
+  font-size: 1rem;
+  font-family: 'Poiret One';
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+

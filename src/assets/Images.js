@@ -1,6 +1,6 @@
 //svgs
 import website from './Icons/website.svg';
-import instagram from "./Icons/Instagram.svg";
+import instagram from "./Icons/insta.svg";
 import twitter from "./Icons/twitter.svg";
 import tiktok from "./Icons/tiktok.svg";
 import youtube from "./Icons/youtube.svg";

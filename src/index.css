@@ -11,8 +11,8 @@
 }
 
 body{
-  background-color: #ffddc5be;
-  color: #1C1C1C;
+  background-color: rgb(254, 242, 233);
+  color: #000000;
 }
 
 .one{
@@ -29,6 +29,7 @@ body{
 
 .two{
   font-family: 'Poppins';
+  color: #000000;
 }
 
 .three{
@@ -40,7 +41,7 @@ body{
 }
 
 .bg-secondary{
-  background-color: rgb(24, 14, 0);
+  background-color: rgb(0, 0, 0);
 }
 
 .bg-glass{

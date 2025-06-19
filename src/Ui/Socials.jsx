@@ -13,13 +13,13 @@ const Socials = () => {
           setAdIndex((prev) => (prev + 1) % adMessages.length);
           setFade(true); // Fade in new message
         }, 500); // Duration of fade out
-      }, 5000); // 15 seconds
+      }, 8000); // 15 seconds
 
       return () => clearInterval(interval);
     }, []);
 
   return (
-    <div className="bg-primary  w-screen h-[5vh] grid grid-cols-3 gap-3 !p-1 !px-[3%]">
+    <div className="bg-primary  w-screen h-[7vh] md:grid grid-cols-3 gap-3 !p-1 !px-[3%]  hidden">
       <div className="flex items-center justify-start gap-5">
         {socialMedia.map((item, index) => {
           return (
@@ -30,7 +30,7 @@ const Socials = () => {
         })}
       </div>
       <div
-        className={`font-medium text-sm two flex items-center justify-center transition-opacity duration-500 ${
+        className={`font-medium text-sm text-center three flex items-center justify-center transition-opacity duration-500 ${
           fade ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -41,10 +41,10 @@ const Socials = () => {
           +254700809559
         </p>
         <p className="hover:underline duration-700 transition-all cursor-pointer">
-          www.infinityabaya.com
+          www.Layaliabaya.com
         </p>
         <p className="hover:underline duration-700 transition-all cursor-pointer">
-          @infinity_ke
+          @Layali_ke
         </p>
       </div>
     </div>

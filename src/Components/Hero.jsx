@@ -55,7 +55,7 @@ const Hero = () => {
     <div
       className="w-full relative overflow-hidden"
       style={{
-        height: `calc(100vh - ${NAVBAR_HEIGHT})`,
+        height: `calc(85vh - ${NAVBAR_HEIGHT})`,
         marginTop: NAVBAR_HEIGHT,
       }}
     >
@@ -67,12 +67,12 @@ const Hero = () => {
       {/* Hero Content */}
       {!showVideo && (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-black/40 z-10">
-          <h1 className="text-8xl one text-white">{hero.name}</h1>
-          <p className="text-orange one text-white w-[50%] text-center text-md">
+          <h1 className="text-6xl md:text-8xl one text-white">{hero.name}</h1>
+          <p className="text-orange one text-white w-[70%] md:w-[50%] text-center text-md">
             {hero.description}
           </p>
           <button
-            className="!py-2 !px-[7rem] bg-black one text-white rounded-full !mt-[3rem] hover:bg-white hover:text-black cursor-pointer transition-all duration-700"
+            className="!py-2 !px-[7rem] bg-amber-950 one text-white rounded-full !mt-[3rem] hover:bg-white hover:text-black cursor-pointer transition-all duration-700"
             onClick={() => setShowVideo(true)}
           >
             Watch Now

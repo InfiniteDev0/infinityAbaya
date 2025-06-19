@@ -31,6 +31,9 @@ const Sidebar = () => {
     }
   };
 
+  // Helper to check if mobile
+  const isMobile = () => window.innerWidth < 768;
+
   return (
     <>
       {/* Overlay */}
@@ -54,7 +57,7 @@ const Sidebar = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed top-0 left-0 w-[30%] h-screen z-[100] flex flex-col gap-[5rem] bg-glass one font-medium !p-5"
+            className="fixed top-0 left-0 md:w-[30%] h-screen z-[100] flex flex-col justify-between bg-glass one font-medium !p-5"
             style={{ maxHeight: "100vh" }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -89,7 +92,7 @@ const Sidebar = () => {
                           className="cursor-pointer hover:text-orange-300 transition-colors duration-200"
                           onClick={() => {
                             setShowCollections(true);
-                            setSelectedCollection(collections[0]);
+                            setSelectedCollection(collections[""]);
                           }}
                         >
                           {item.label}
@@ -141,7 +144,16 @@ const Sidebar = () => {
                     >
                       <span
                         className="cursor-pointer hover:text-orange-300 transition-colors duration-200"
-                        onClick={() => setSelectedCollection(col)}
+                        onClick={() => {
+                          if (isMobile()) {
+                            setVisible(false);
+                            setShowCollections(false);
+                            setSelectedCollection(null);
+                            navigate(`/collections/${col.slug}`);
+                          } else {
+                            setSelectedCollection(col);
+                          }
+                        }}
                       >
                         {col.name}
                       </span>
@@ -151,14 +163,14 @@ const Sidebar = () => {
               )}
             </AnimatePresence>
             <hr />
-            <ul className="flex flex-col gap-3 text-lg">
-              <li className="text-white hover:text-black cursor-pointer">
-                Luxury meets Modesty
+            <ul className={`flex flex-col gap-3 text-lg `}>
+              <li className="text-white hover:text-orange-300 cursor-pointer">
+                Every scent tells a story. Yours begins here.
               </li>
               <li>
                 <Link
                   to="/contact"
-                  className="hover:text-black transition-colors duration-200"
+                  className="hover:text-orange-300 transition-colors duration-200"
                   onClick={() => setVisible(false)}
                 >
                   Contact Us
@@ -177,7 +189,7 @@ const Sidebar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 200, damping: 30 }}
-            className="fixed top-0 left-[30%] w-[70%] h-screen z-[110] bg-white flex flex-col items-center justify-center p-0"
+            className="fixed top-0 left-[30%] w-[70%] h-screen z-[110] bg-white hidden md:flex flex-col items-center justify-center p-0"
             style={{ padding: 0 }}
           >
             <div className="relative w-full h-full flex-1 flex flex-col">
@@ -187,9 +199,12 @@ const Sidebar = () => {
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ zIndex: 1 }}
               />
-              <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10 flex justify-center w-full">
+              <div className="absolute left-[50%] transform h-[95vh] -translate-x-1/2 z-10 flex flex-col justify-between items-center w-full">
+                <p className="one !pt-4 text-lg text-black ">
+                  {selectedCollection.description}
+                </p>
                 <button
-                  className="bg-orange-900 one text-white !px-[8rem] !py-2 cursor-pointer text-lg rounded-full"
+                  className="bg-orange-900 one text-white !px-[8rem] !py-2 w-fit cursor-pointer text-lg rounded-full"
                   onClick={handleDiscover}
                 >
                   Discover

@@ -21,42 +21,39 @@ const Login = () => {
       style={{
         minHeight: `calc(100vh - ${NAVBAR_HEIGHT})`,
         marginTop: NAVBAR_HEIGHT,
-        background: "#000",
-        color: "#fff",
-        textAlign: "center",
       }}
     >
       <form
         onSubmit={state === "LOGIN" ? handleLogin : handleRegister}
         className="flex flex-col gap-[1.5rem] items-center w-[90vw] max-w-[400px]"
       >
-        <h1 className="Poiret text-2xl text-white text-center">{state}</h1>
-        <p className="text-white text-center">
+        <h1 className="Poiret text-2xl  text-center">{state}</h1>
+        <p className="text-center">
           {state === "LOGIN"
             ? "Enter your email and password to login:"
             : "Please fill in the information below:"}
         </p>
         <input
-          className={`border outline-none w-full h-[5vh] !p-1 !pl-3 rounded bg-black text-white ${
+          className={`border outline-none w-full h-[5vh] !p-1 !pl-3 rounded bg-transparent text-white ${
             state === "LOGIN" ? "hidden" : ""
           }`}
           type="text"
           placeholder="Last name"
         />
         <input
-          className={`border outline-none w-full h-[5vh] !p-1 !pl-3 rounded bg-black text-white ${
+          className={`border outline-none w-full h-[5vh] !p-1 !pl-3 rounded  text-white ${
             state === "LOGIN" ? "hidden" : ""
           }`}
           type="text"
           placeholder="First name"
         />
         <input
-          className="border outline-none w-full h-[5vh] !p-1 !pl-3 rounded bg-black text-white"
+          className="border border-zinc-950 outline-none w-full h-[5vh] !p-1 !pl-3 rounded bg-transparent text-black"
           type="text"
           placeholder="E-mail"
         />
         <input
-          className="border outline-none w-full h-[5vh] !p-1 !pl-3 rounded bg-black text-white"
+          className="border border-zinc-900 outline-none w-full h-[5vh] !p-1 !pl-3 rounded bg-transparent text-black"
           type="password"
           placeholder="Password"
         />
